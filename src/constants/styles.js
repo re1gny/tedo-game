@@ -1,5 +1,5 @@
-import TTCommonsProDemiBold from "../assets/fonts/TT Commons Pro DemiBold.ttf";
-import TTCommonsProRegular from "../assets/fonts/TT Commons Pro Regular.ttf";
+import TTCommonsProDemiBold from "../assets/fonts/TTCommonsProDemiBold.ttf";
+import TTCommonsProRegular from "../assets/fonts/TTCommonsProRegular.ttf";
 
 export const GLOBAL_STYLE = {
     html: {

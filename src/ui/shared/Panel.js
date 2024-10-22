@@ -5,9 +5,9 @@ import {scalePx} from "../../utils/scalePx";
 const WrapperStyled = styled.div`
     display: flex;
     flex-direction: column;
-    background: #FFFFFF;
+    background-color: #3C6EF5;
     width: 100%;
-    border-radius: ${({sizeRatio}) => scalePx(12, sizeRatio)};
+    border-radius: ${({sizeRatio}) => scalePx(25, sizeRatio)};
 `;
 
 export const Panel = ({ children, ...props }) => {

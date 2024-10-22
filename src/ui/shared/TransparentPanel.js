@@ -5,14 +5,13 @@ import {scalePx} from "../../utils/scalePx";
 const WrapperStyled = styled.div`
     display: flex;
     flex-direction: column;
-    border: 1px solid #FFFFFF80;
-    backdrop-filter: blur(20px);
-    background: #FFFFFF99;
+    background: #FFFFFF33;
+    backdrop-filter: blur(5px);
     width: 100%;
-    border-radius: ${({sizeRatio}) => scalePx(12, sizeRatio)};
+    border-radius: ${({sizeRatio}) => scalePx(25, sizeRatio)};
 `;
 
-export const GlassPanel = ({ children, ...props }) => {
+export const TransparentPanel = ({ children, ...props }) => {
     const sizeRatio = useSizeRatio();
 
     return (
