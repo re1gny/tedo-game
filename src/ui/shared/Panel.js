@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
+import {motion} from "framer-motion";
 import {useSizeRatio} from "../../hooks/useSizeRatio";
 import {scalePx} from "../../utils/scalePx";
 
-const WrapperStyled = styled.div`
+const WrapperStyled = styled(motion.div)`
     display: flex;
     flex-direction: column;
     background-color: #3C6EF5;
