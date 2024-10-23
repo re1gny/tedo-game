@@ -6,7 +6,7 @@ import {useSizeRatio} from "../../hooks/useSizeRatio";
 import PanelBackImage from "../../assets/images/level3Game/panelBack.png";
 import BackImage from "../../assets/images/level3/back1.png";
 import ActiveBackImage from "../../assets/images/level3/back2.png";
-import {scalePx, scalePxTemplate} from "../../utils/scalePx";
+import {scalePx} from "../../utils/scalePx";
 import {IconButton} from "../shared/IconButton";
 import {Panel} from "../shared/Panel";
 import {Tag} from "../shared/Tag";
