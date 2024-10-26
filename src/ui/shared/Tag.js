@@ -7,9 +7,9 @@ const TagStyled = styled.div`
     align-items: center;
     justify-content: center;
     height: ${({sizeRatio}) => scalePx(25, sizeRatio)};
-    padding: ${({sizeRatio}) => `0 ${scalePx(10, sizeRatio)}`};
+    padding: ${({sizeRatio}) => `${scalePx(6, sizeRatio)} ${scalePx(10, sizeRatio)} ${scalePx(9, sizeRatio)}`};
     font-size: ${({sizeRatio}) => scalePx(14, sizeRatio)};
-    line-height: ${({sizeRatio}) => scalePx(18.2, sizeRatio)};
+    line-height: ${({sizeRatio}) => scalePx(10, sizeRatio)};
     border-radius: ${({sizeRatio}) => scalePx(20, sizeRatio)};
     text-align: center;
     white-space: pre-wrap;

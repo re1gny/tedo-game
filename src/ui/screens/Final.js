@@ -79,7 +79,7 @@ export function Final() {
     const isEmailErrorTimerRef = useRef(null)
 
     const handleGo = () => {
-        window.open('#', '_blank');
+        window.open('https://t.me/tedo_career', '_blank');
     };
 
     const handleEmailChange = (value) => {
