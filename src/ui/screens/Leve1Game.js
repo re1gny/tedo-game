@@ -118,6 +118,7 @@ const PanelsStyled = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     margin-top: ${({sizeRatio}) => scalePx(30, sizeRatio)};
 `;
@@ -136,6 +137,7 @@ const PanelStyled = styled(Panel)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: auto;
     background-image: ${({background}) => `url(${background})`};
     background-size: 100% 100%;
     background-repeat: no-repeat;
