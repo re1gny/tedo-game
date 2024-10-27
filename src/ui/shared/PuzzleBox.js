@@ -7,7 +7,7 @@ import {Image} from "./Image";
 import PuzzleBackVerticalImage from "../../assets/images/level2/puzzleBackVertical.png";
 import PuzzleBackHorizontalImage from "../../assets/images/level2/puzzleBackHorizontal.png";
 
-const PuzzleBoxStyled = styled.button`
+const PuzzleBoxStyled = styled(motion.button)`
     position: relative;
     outline: none;
     border: none;
