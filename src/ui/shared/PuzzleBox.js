@@ -1,7 +1,11 @@
+import {forwardRef} from "react";
+import {AnimatePresence, motion} from "framer-motion";
 import styled from '@emotion/styled';
 import {scalePx} from "../../utils/scalePx";
 import {useSizeRatio} from "../../hooks/useSizeRatio";
 import {Image} from "./Image";
+import PuzzleBackVerticalImage from "../../assets/images/level2/puzzleBackVertical.png";
+import PuzzleBackHorizontalImage from "../../assets/images/level2/puzzleBackHorizontal.png";
 
 const PuzzleBoxStyled = styled.button`
     position: relative;
@@ -9,42 +13,81 @@ const PuzzleBoxStyled = styled.button`
     border: none;
     width: ${({sizeRatio}) => scalePx(60, sizeRatio)};
     height: ${({sizeRatio}) => scalePx(60, sizeRatio)};
-    background-color: ${({active}) => active ? `rgb(245, 225, 190, 0.78)` : 'transparent'};
-    box-shadow: ${({active, sizeRatio}) => active ? `0 0 ${scalePx(6, sizeRatio)} ${scalePx(3, sizeRatio)} #F5E1BE` : 'none'};
+    background-color: transparent;
     border-radius: ${({sizeRatio}) => scalePx(10, sizeRatio)};
-    transition: background-color 0.2s, box-shadow 0.2s;
+    touch-action: none;
     
     &:not(:disabled) {
         cursor: pointer;
     }
 `;
 
+const TYPE_TO_OFFSET = {
+    vertical: [9, 0],
+    horizontal: [0, 9],
+};
+
 const ImageStyled = styled(Image)`
     position: absolute;
-    top: ${({sizeRatio, tailTop}) => scalePx(-9 * tailTop, sizeRatio)};
-    left: ${({sizeRatio, tailLeft}) => scalePx(-9 * tailLeft, sizeRatio)};
-    width: ${({sizeRatio, tailLeft, tailRight}) => scalePx(60 + (tailLeft + tailRight) * 9, sizeRatio)};
-    height: ${({sizeRatio, tailTop, tailBottom}) => scalePx(60 + (tailTop + tailBottom) * 9, sizeRatio)};
+    top: ${({sizeRatio, type}) => scalePx(-1 * TYPE_TO_OFFSET[type][0], sizeRatio)};
+    left: ${({sizeRatio, type}) => scalePx(-1 * TYPE_TO_OFFSET[type][1], sizeRatio)};
+    width: ${({sizeRatio, type}) => scalePx(60 + 2 * TYPE_TO_OFFSET[type][1], sizeRatio)};
+    height: ${({sizeRatio, type}) => scalePx(60 + 2 * TYPE_TO_OFFSET[type][0], sizeRatio)};
 `;
 
-export const PuzzleBox = ({active, image, tails = [false, false, false, false], ...rest}) => {
+const PuzzleBoxBackdropStyled = styled(motion.div)`
+    position: relative;
+    width: ${({sizeRatio}) => scalePx(60, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(60, sizeRatio)};
+    border-radius: ${({sizeRatio}) => scalePx(10, sizeRatio)};
+`;
+
+const TYPE_TO_IMAGE = {
+    vertical: PuzzleBackVerticalImage,
+    horizontal: PuzzleBackHorizontalImage,
+};
+
+const TYPE_TO_BACKDROP_OFFSET = {
+    vertical: [18, 9],
+    horizontal: [9, 18],
+};
+
+const ImageBackdropStyled = styled(Image)`
+    position: absolute;
+    top: ${({sizeRatio, type}) => scalePx(-1 * TYPE_TO_BACKDROP_OFFSET[type][0], sizeRatio)};
+    left: ${({sizeRatio, type}) => scalePx(-1 * TYPE_TO_BACKDROP_OFFSET[type][1], sizeRatio)};
+    width: ${({sizeRatio, type}) => scalePx(60 + 2 * TYPE_TO_BACKDROP_OFFSET[type][1], sizeRatio)};
+    height: ${({sizeRatio, type}) => scalePx(60 + 2 * TYPE_TO_BACKDROP_OFFSET[type][0], sizeRatio)};
+`;
+
+const PuzzleBoxBackdrop = ({active, type, ...rest}) => {
     const sizeRatio = useSizeRatio();
 
-    const tailTop = tails[0] ? 1 : 0;
-    const tailRight = tails[1] ? 1 : 0;
-    const tailBottom = tails[2] ? 1 : 0;
-    const tailLeft = tails[3] ? 1 : 0;
+    return (
+        <AnimatePresence>
+            {active && (
+                <PuzzleBoxBackdropStyled
+                    sizeRatio={sizeRatio}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    {...rest}
+                >
+                    <ImageBackdropStyled sizeRatio={sizeRatio} active={active} type={type} src={TYPE_TO_IMAGE[type]} />
+                </PuzzleBoxBackdropStyled>
+            )}
+        </AnimatePresence>
+    );
+};
+
+export const PuzzleBox = forwardRef(({active, image, type, ...rest}, ref) => {
+    const sizeRatio = useSizeRatio();
 
     return (
-        <PuzzleBoxStyled sizeRatio={sizeRatio} active={active} {...rest}>
-            <ImageStyled
-                sizeRatio={sizeRatio}
-                tailTop={tailTop}
-                tailRight={tailRight}
-                tailBottom={tailBottom}
-                tailLeft={tailLeft}
-                src={image}
-            />
+        <PuzzleBoxStyled ref={ref} sizeRatio={sizeRatio} active={active} {...rest}>
+            <ImageStyled sizeRatio={sizeRatio} type={type} src={image} />
         </PuzzleBoxStyled>
     );
-}
+})
+
+PuzzleBox.Backdrop = PuzzleBoxBackdrop;
