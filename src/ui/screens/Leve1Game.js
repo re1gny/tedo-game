@@ -3,14 +3,85 @@ import {AnimatePresence, motion} from "framer-motion";
 import styled from "@emotion/styled";
 import {useProgress} from "../../hooks/useProgress";
 import {useSizeRatio} from "../../hooks/useSizeRatio";
-import PanelBackImage from "../../assets/images/level1Game/panelBack.png";
-import BackImage from "../../assets/images/level1/back.png";
-import {scalePx} from "../../utils/scalePx";
+import {scalePx, scalePxTemplate} from "../../utils/scalePx";
 import {IconButton} from "../shared/IconButton";
 import {Panel} from "../shared/Panel";
 import {Tag} from "../shared/Tag";
 import {RulesPanel} from "./Leve1Rules";
 import {Blackout} from "../shared/Blackout";
+import {LineBox} from "../shared/LineBox";
+import {Image} from "../shared/Image";
+import PanelBackImage from "../../assets/images/level1Game/panelBack.png";
+import BackImage from "../../assets/images/level1/back.png";
+import Person1Image from "../../assets/images/level1Game/person1.svg";
+import Person2Image from "../../assets/images/level1Game/person2.svg";
+import Person3Image from "../../assets/images/level1Game/person3.svg";
+import Task1Image from "../../assets/images/level1Game/task1.svg";
+import Task2Image from "../../assets/images/level1Game/task2.svg";
+import Task3Image from "../../assets/images/level1Game/task3.svg";
+import Person3Line1Image from "../../assets/images/level1Game/lines/person3Line1.svg";
+import Person3Line2Image from "../../assets/images/level1Game/lines/person3Line2.svg";
+import Person3Line3Image from "../../assets/images/level1Game/lines/person3Line3.svg";
+import Person3Line4Image from "../../assets/images/level1Game/lines/person3Line4.svg";
+import Person3Line5Image from "../../assets/images/level1Game/lines/person3Line5.svg";
+import Person3Line6Image from "../../assets/images/level1Game/lines/person3Line6.svg";
+import Person3Line7Image from "../../assets/images/level1Game/lines/person3Line7.svg";
+import Person3Line8Image from "../../assets/images/level1Game/lines/person3Line8.svg";
+import Person3Line9Image from "../../assets/images/level1Game/lines/person3Line9.svg";
+import Person3Line10Image from "../../assets/images/level1Game/lines/person3Line10.svg";
+import Person2Line1Image from "../../assets/images/level1Game/lines/person2Line1.svg";
+import Person2Line2Image from "../../assets/images/level1Game/lines/person2Line2.svg";
+import Person2Line3Image from "../../assets/images/level1Game/lines/person2Line3.svg";
+import Person2Line4Image from "../../assets/images/level1Game/lines/person2Line4.svg";
+import Person2Line5Image from "../../assets/images/level1Game/lines/person2Line5.svg";
+import Person2Line6Image from "../../assets/images/level1Game/lines/person2Line6.svg";
+import Person2Line7Image from "../../assets/images/level1Game/lines/person2Line7.svg";
+import Person2Line8Image from "../../assets/images/level1Game/lines/person2Line8.svg";
+import Person2Line9Image from "../../assets/images/level1Game/lines/person2Line9.svg";
+import Person2Line10Image from "../../assets/images/level1Game/lines/person2Line10.svg";
+import Person2Line11Image from "../../assets/images/level1Game/lines/person2Line11.svg";
+import Person1Line1Image from "../../assets/images/level1Game/lines/person1Line1.svg";
+import Person1Line2Image from "../../assets/images/level1Game/lines/person1Line2.svg";
+import Person1Line3Image from "../../assets/images/level1Game/lines/person1Line3.svg";
+import Person1Line4Image from "../../assets/images/level1Game/lines/person1Line4.svg";
+import Person1Line5Image from "../../assets/images/level1Game/lines/person1Line5.svg";
+import Person1Line6Image from "../../assets/images/level1Game/lines/person1Line6.svg";
+import Person1Line7Image from "../../assets/images/level1Game/lines/person1Line7.svg";
+import Person1Line8Image from "../../assets/images/level1Game/lines/person1Line8.svg";
+import Person1Line9Image from "../../assets/images/level1Game/lines/person1Line9.svg";
+import Person1Subline1Image from "../../assets/images/level1Game/sublines/person1Subline1.svg";
+import Person1Subline2Image from "../../assets/images/level1Game/sublines/person1Subline2.svg";
+import Person1Subline3Image from "../../assets/images/level1Game/sublines/person1Subline3.svg";
+import Person1Subline4Image from "../../assets/images/level1Game/sublines/person1Subline4.svg";
+import Person1Subline5Image from "../../assets/images/level1Game/sublines/person1Subline5.svg";
+import Person1Subline6Image from "../../assets/images/level1Game/sublines/person1Subline6.svg";
+import Person1Subline7Image from "../../assets/images/level1Game/sublines/person1Subline7.svg";
+import Person1Subline8Image from "../../assets/images/level1Game/sublines/person1Subline8.svg";
+import Person1Subline9Image from "../../assets/images/level1Game/sublines/person1Subline9.svg";
+import Person1Subline10Image from "../../assets/images/level1Game/sublines/person1Subline10.svg";
+import Person2Subline1Image from "../../assets/images/level1Game/sublines/person2Subline1.svg";
+import Person2Subline2Image from "../../assets/images/level1Game/sublines/person2Subline2.svg";
+import Person2Subline3Image from "../../assets/images/level1Game/sublines/person2Subline3.svg";
+import Person2Subline4Image from "../../assets/images/level1Game/sublines/person2Subline4.svg";
+import Person2Subline5Image from "../../assets/images/level1Game/sublines/person2Subline5.svg";
+import Person2Subline6Image from "../../assets/images/level1Game/sublines/person2Subline6.svg";
+import Person2Subline7Image from "../../assets/images/level1Game/sublines/person2Subline7.svg";
+import Person2Subline8Image from "../../assets/images/level1Game/sublines/person2Subline8.svg";
+import Person2Subline9Image from "../../assets/images/level1Game/sublines/person2Subline9.svg";
+import Person2Subline10Image from "../../assets/images/level1Game/sublines/person2Subline10.svg";
+import Person2Subline11Image from "../../assets/images/level1Game/sublines/person2Subline11.svg";
+import Person2Subline12Image from "../../assets/images/level1Game/sublines/person2Subline12.svg";
+import Person3Subline1Image from "../../assets/images/level1Game/sublines/person3Subline1.svg";
+import Person3Subline2Image from "../../assets/images/level1Game/sublines/person3Subline2.svg";
+import Person3Subline3Image from "../../assets/images/level1Game/sublines/person3Subline3.svg";
+import Person3Subline4Image from "../../assets/images/level1Game/sublines/person3Subline4.svg";
+import Person3Subline5Image from "../../assets/images/level1Game/sublines/person3Subline5.svg";
+import Person3Subline6Image from "../../assets/images/level1Game/sublines/person3Subline6.svg";
+import Person3Subline7Image from "../../assets/images/level1Game/sublines/person3Subline7.svg";
+import Person3Subline8Image from "../../assets/images/level1Game/sublines/person3Subline8.svg";
+import Person3Subline9Image from "../../assets/images/level1Game/sublines/person3Subline9.svg";
+import Person3Subline10Image from "../../assets/images/level1Game/sublines/person3Subline10.svg";
+import Person3Subline11Image from "../../assets/images/level1Game/sublines/person3Subline11.svg";
 
 const Wrapper = styled(motion.div)`
     display: flex;
@@ -65,7 +136,6 @@ const PanelStyled = styled(Panel)`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: auto;
     background-image: ${({background}) => `url(${background})`};
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -76,9 +146,280 @@ const PanelStyled = styled(Panel)`
 `;
 
 const LinesWrapperStyled = styled.div`
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: ${({sizeRatio}) => scalePx(16, sizeRatio)};
+    grid-template-columns: repeat(5, 1fr);
+    gap: ${({sizeRatio}) => scalePx(9, sizeRatio)};
+`;
+
+const LinesBackdropWrapperStyled = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: ${({sizeRatio}) => scalePx(9, sizeRatio)};
+`;
+
+const SublineImagesWraperStyled = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+`;
+
+const SublineImageStyled = styled(Image)`
+    position: absolute;
+    z-index: 2;
+`;
+
+const Person1Subline1ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(44, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(21, sizeRatio)};
+`;
+
+const Person1Subline2ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(98, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(21, sizeRatio)};
+`;
+
+const Person1Subline3ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(18, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(98, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(69, sizeRatio)};
+`;
+
+const Person1Subline4ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(131, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(43, sizeRatio)};
+`;
+
+const Person1Subline5ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(153, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(83, sizeRatio)};
+`;
+
+const Person1Subline6ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(187, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(43, sizeRatio)};
+`;
+
+const Person1Subline7ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(208, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(21, sizeRatio)};
+`;
+
+const Person1Subline8ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(263, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(21, sizeRatio)};
+`;
+
+const Person1Subline9ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(318, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(21, sizeRatio)};
+`;
+
+const Person1Subline10ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(22, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(374, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(21, sizeRatio)};
+`;
+
+const Person2Subline1ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(44, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(131, sizeRatio)};
+`;
+
+const Person2Subline2ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(18, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(69, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(153, sizeRatio)};
+`;
+
+const Person2Subline3ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(98, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(131, sizeRatio)};
+`;
+
+const Person2Subline4ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(153, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(131, sizeRatio)};
+`;
+
+const Person2Subline5ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(208, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(131, sizeRatio)};
+`;
+
+const Person2Subline6ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(18, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(234, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(153, sizeRatio)};
+`;
+
+const Person2Subline7ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(248, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(98, sizeRatio)};
+`;
+
+const Person2Subline8ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(263, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(76, sizeRatio)};
+`;
+
+const Person2Subline9ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(318, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(76, sizeRatio)};
+`;
+
+const Person2Subline10ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(344, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(98, sizeRatio)};
+`;
+
+const Person2Subline11ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(18, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(344, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(154, sizeRatio)};
+`;
+
+const Person2Subline12ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(22, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(374, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(131, sizeRatio)};
+`;
+
+const Person3Subline1ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(44, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(241, sizeRatio)};
+`;
+
+const Person3Subline2ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(98, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(241, sizeRatio)};
+`;
+
+const Person3Subline3ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(5, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(133, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(208, sizeRatio)};
+`;
+
+const Person3Subline4ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(153, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(186, sizeRatio)};
+`;
+
+const Person3Subline5ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(5, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(187, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(208, sizeRatio)};
+`;
+
+const Person3Subline6ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(208, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(241, sizeRatio)};
+`;
+
+const Person3Subline7ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(263, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(241, sizeRatio)};
+`;
+
+const Person3Subline8ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(18, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(289, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(209, sizeRatio)};
+`;
+
+const Person3Subline9ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(18, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(289, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(153, sizeRatio)};
+`;
+
+const Person3Subline10ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(14, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(318, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(241, sizeRatio)};
+`;
+
+const Person3Subline11ImageStyled = styled(SublineImageStyled)`
+    width: ${({sizeRatio}) => scalePx(4, sizeRatio)};
+    height: ${({sizeRatio}) => scalePx(22, sizeRatio)};
+    top: ${({sizeRatio}) => scalePx(374, sizeRatio)};
+    left: ${({sizeRatio}) => scalePx(241, sizeRatio)};
+`;
+
+const PersonLineBoxStyled = styled(LineBox)`
+    position: relative;
+    z-index: 3;
+`;
+
+const PathLineBoxStyled = styled(LineBox)`
+    position: relative;
+    z-index: 3;
+`;
+
+const TaskLineBoxStyled = styled(LineBox)`
+    position: relative;
+    z-index: 1;
 `;
 
 const IconButtonStyled = styled(IconButton)`
@@ -93,26 +434,225 @@ const IconStyled = styled.svg`
     height: ${({sizeRatio}) => scalePx(25, sizeRatio)};
 `;
 
-const INDEXES_ORDER = [4, 0, 1, 5, 8, 7, 6, 2, 3];
+const PERSON_1_PATH = [0, 1, 5, 6, 10, 11, 15, 20, 25];
+const PERSON_2_PATH = [2, 3, 7, 12, 16, 17, 18, 21, 26, 27, 28];
+const PERSON_3_PATH = [4, 8, 9, 13, 14, 19, 22, 23, 24, 29];
+
+const PERSON_TO_PATH = {
+    1: PERSON_1_PATH,
+    2: PERSON_2_PATH,
+    3: PERSON_3_PATH,
+};
+
+const BOXES = {
+    0: {
+        initialRotate: 1,
+        correctRotates: [0, 2],
+        image: Person1Line1Image,
+        person: 1,
+    },
+    1: {
+        initialRotate: 0,
+        correctRotates: [0],
+        image: Person1Line2Image,
+        person: 1,
+    },
+    2: {
+        initialRotate: 0,
+        correctRotates: [0],
+        image: Person2Line1Image,
+        person: 2,
+    },
+    3: {
+        initialRotate: 0,
+        correctRotates: [0],
+        image: Person2Line2Image,
+        person: 2,
+    },
+    4: {
+        initialRotate: 0,
+        correctRotates: [0, 2],
+        image: Person3Line1Image,
+        person: 3,
+    },
+    5: {
+        initialRotate: 2,
+        correctRotates: [0],
+        image: Person1Line3Image,
+        person: 1,
+    },
+    6: {
+        initialRotate: 2,
+        correctRotates: [0],
+        image: Person1Line4Image,
+        person: 1,
+    },
+    7: {
+        initialRotate: 1,
+        correctRotates: [0, 2],
+        image: Person2Line3Image,
+        person: 2,
+    },
+    8: {
+        initialRotate: 0,
+        correctRotates: [0],
+        image: Person3Line3Image,
+        person: 3,
+    },
+    9: {
+        initialRotate: 2,
+        correctRotates: [0],
+        image: Person3Line2Image,
+        person: 3,
+    },
+    10: {
+        initialRotate: 0,
+        correctRotates: [0],
+        image: Person1Line5Image,
+        person: 1,
+    },
+    11: {
+        initialRotate: 1,
+        correctRotates: [0],
+        image: Person1Line6Image,
+        person: 1,
+    },
+    12: {
+        initialRotate: 0,
+        correctRotates: [0, 2],
+        image: Person2Line4Image,
+        person: 2,
+    },
+    13: {
+        initialRotate: 2,
+        correctRotates: [0],
+        image: Person3Line4Image,
+        person: 3,
+    },
+    14: {
+        initialRotate: 2,
+        correctRotates: [0],
+        image: Person3Line5Image,
+        person: 3,
+    },
+    15: {
+        initialRotate: 1,
+        correctRotates: [0, 2],
+        image: Person1Line7Image,
+        person: 1,
+    },
+    16: {
+        initialRotate: 2,
+        correctRotates: [0],
+        image: Person2Line7Image,
+        person: 2,
+    },
+    17: {
+        initialRotate: 2,
+        correctRotates: [0],
+        image: Person2Line5Image,
+        person: 2,
+    },
+    18: {
+        initialRotate: 0,
+        correctRotates: [0],
+        image: Person2Line6Image,
+        person: 2,
+    },
+    19: {
+        initialRotate: 1,
+        correctRotates: [0, 2],
+        image: Person3Line6Image,
+        person: 3,
+    },
+    20: {
+        initialRotate: 0,
+        correctRotates: [0, 2],
+        image: Person1Line8Image,
+        person: 1,
+    },
+    21: {
+        initialRotate: 0,
+        correctRotates: [0, 2],
+        image: Person2Line8Image,
+        person: 2,
+    },
+    22: {
+        initialRotate: 2,
+        correctRotates: [0],
+        image: Person3Line9Image,
+        person: 3,
+    },
+    23: {
+        initialRotate: 1,
+        correctRotates: [0, 2],
+        image: Person3Line8Image,
+        person: 3,
+    },
+    24: {
+        initialRotate: 2,
+        correctRotates: [0],
+        image: Person3Line7Image,
+        person: 3,
+    },
+    25: {
+        initialRotate: 0,
+        correctRotates: [0, 2],
+        image: Person1Line9Image,
+        person: 1,
+    },
+    26: {
+        initialRotate: 2,
+        correctRotates: [0],
+        image: Person2Line9Image,
+        person: 2,
+    },
+    27: {
+        initialRotate: 0,
+        correctRotates: [0],
+        image: Person2Line10Image,
+        person: 2,
+    },
+    28: {
+        initialRotate: 0,
+        correctRotates: [0],
+        image: Person2Line11Image,
+        person: 2,
+    },
+    29: {
+        initialRotate: 1,
+        correctRotates: [0, 2],
+        image: Person3Line10Image,
+        person: 3,
+    },
+};
+
+const LINES = new Array(30).fill(null).map((_, index) => index);
+
+const INITIAL_ROTATES = LINES.reduce((acc, item) => ({ ...acc, [item]: BOXES[item].initialRotate }), {});
 
 export function Leve1Game() {
     const sizeRatio = useSizeRatio();
     const {next} = useProgress();
-    const [activeIndexes, setActiveIndexes] = useState([]);
+    const [rotates, setRotates] = useState(INITIAL_ROTATES);
     const [isWin, setIsWin] = useState(false);
     const [isRules, setIsRules] = useState(false);
 
-    const handleClick = (index) => {
-        if (activeIndexes.includes(index)) {
-            return;
-        }
+    const checkIsActive = (person, currentRotates) => {
+        return PERSON_TO_PATH[person].every(item => BOXES[item].correctRotates.includes(currentRotates[item] % 4));
+    };
 
-        const nextIndex = INDEXES_ORDER[activeIndexes.length];
-        const resultIndexes = nextIndex === index ? [...activeIndexes, index] : [];
+    const handleClick = (item) => {
+        const newRotate = rotates[item] + 1;
+        const newRotates = { ...rotates, [item]: newRotate };
 
-        setActiveIndexes(resultIndexes);
+        setRotates(newRotates);
 
-        if (resultIndexes.length === INDEXES_ORDER.length) {
+        if (
+            checkIsActive(1, newRotates)
+            && checkIsActive(2, newRotates)
+            && checkIsActive(3, newRotates)
+        ) {
             setIsWin(true);
             setTimeout(next, 2000);
         }
@@ -160,7 +700,79 @@ export function Leve1Game() {
                             exit={{ opacity: 0 }}
                         >
                             <LinesWrapperStyled sizeRatio={sizeRatio}>
-
+                                <LinesBackdropWrapperStyled sizeRatio={sizeRatio}>
+                                    <LineBox.Backdrop active={checkIsActive(1, rotates)} />
+                                    <div />
+                                    <LineBox.Backdrop active={checkIsActive(2, rotates)} />
+                                    <div />
+                                    <LineBox.Backdrop active={checkIsActive(3, rotates)} />
+                                    {LINES.map((item) => (
+                                        <LineBox.Backdrop
+                                            key={item}
+                                            active={checkIsActive(BOXES[item].person, rotates)}
+                                        />
+                                    ))}
+                                    <LineBox.Backdrop active={checkIsActive(1, rotates)} />
+                                    <div />
+                                    <LineBox.Backdrop active={checkIsActive(2, rotates)} />
+                                    <div />
+                                    <LineBox.Backdrop active={checkIsActive(3, rotates)} />
+                                </LinesBackdropWrapperStyled>
+                                <SublineImagesWraperStyled sizeRatio={sizeRatio}>
+                                    <Person1Subline1ImageStyled sizeRatio={sizeRatio} src={Person1Subline1Image} />
+                                    <Person1Subline2ImageStyled sizeRatio={sizeRatio} src={Person1Subline2Image} />
+                                    <Person1Subline3ImageStyled sizeRatio={sizeRatio} src={Person1Subline3Image} />
+                                    <Person1Subline4ImageStyled sizeRatio={sizeRatio} src={Person1Subline4Image} />
+                                    <Person1Subline5ImageStyled sizeRatio={sizeRatio} src={Person1Subline5Image} />
+                                    <Person1Subline6ImageStyled sizeRatio={sizeRatio} src={Person1Subline6Image} />
+                                    <Person1Subline7ImageStyled sizeRatio={sizeRatio} src={Person1Subline7Image} />
+                                    <Person1Subline8ImageStyled sizeRatio={sizeRatio} src={Person1Subline8Image} />
+                                    <Person1Subline9ImageStyled sizeRatio={sizeRatio} src={Person1Subline9Image} />
+                                    <Person1Subline10ImageStyled sizeRatio={sizeRatio} src={Person1Subline10Image} />
+                                    <Person2Subline1ImageStyled sizeRatio={sizeRatio} src={Person2Subline1Image} />
+                                    <Person2Subline2ImageStyled sizeRatio={sizeRatio} src={Person2Subline2Image} />
+                                    <Person2Subline3ImageStyled sizeRatio={sizeRatio} src={Person2Subline3Image} />
+                                    <Person2Subline4ImageStyled sizeRatio={sizeRatio} src={Person2Subline4Image} />
+                                    <Person2Subline5ImageStyled sizeRatio={sizeRatio} src={Person2Subline5Image} />
+                                    <Person2Subline6ImageStyled sizeRatio={sizeRatio} src={Person2Subline6Image} />
+                                    <Person2Subline7ImageStyled sizeRatio={sizeRatio} src={Person2Subline7Image} />
+                                    <Person2Subline8ImageStyled sizeRatio={sizeRatio} src={Person2Subline8Image} />
+                                    <Person2Subline9ImageStyled sizeRatio={sizeRatio} src={Person2Subline9Image} />
+                                    <Person2Subline10ImageStyled sizeRatio={sizeRatio} src={Person2Subline10Image} />
+                                    <Person2Subline11ImageStyled sizeRatio={sizeRatio} src={Person2Subline11Image} />
+                                    <Person2Subline12ImageStyled sizeRatio={sizeRatio} src={Person2Subline12Image} />
+                                    <Person3Subline1ImageStyled sizeRatio={sizeRatio} src={Person3Subline1Image} />
+                                    <Person3Subline2ImageStyled sizeRatio={sizeRatio} src={Person3Subline2Image} />
+                                    <Person3Subline3ImageStyled sizeRatio={sizeRatio} src={Person3Subline3Image} />
+                                    <Person3Subline4ImageStyled sizeRatio={sizeRatio} src={Person3Subline4Image} />
+                                    <Person3Subline5ImageStyled sizeRatio={sizeRatio} src={Person3Subline5Image} />
+                                    <Person3Subline6ImageStyled sizeRatio={sizeRatio} src={Person3Subline6Image} />
+                                    <Person3Subline7ImageStyled sizeRatio={sizeRatio} src={Person3Subline7Image} />
+                                    <Person3Subline8ImageStyled sizeRatio={sizeRatio} src={Person3Subline8Image} />
+                                    <Person3Subline9ImageStyled sizeRatio={sizeRatio} src={Person3Subline9Image} />
+                                    <Person3Subline10ImageStyled sizeRatio={sizeRatio} src={Person3Subline10Image} />
+                                    <Person3Subline11ImageStyled sizeRatio={sizeRatio} src={Person3Subline11Image} />
+                                </SublineImagesWraperStyled>
+                                <PersonLineBoxStyled image={Person1Image} color="dark" disabled />
+                                <div />
+                                <PersonLineBoxStyled image={Person2Image} color="dark" disabled />
+                                <div />
+                                <PersonLineBoxStyled image={Person3Image} color="dark" disabled />
+                                {LINES.map((item) => (
+                                    <PathLineBoxStyled
+                                        key={item}
+                                        image={BOXES[item].image}
+                                        rotate={rotates[item]}
+                                        color="light"
+                                        disabled={isWin}
+                                        onClick={() => handleClick(item)}
+                                    />
+                                ))}
+                                <TaskLineBoxStyled image={Task1Image} color="dark" disabled />
+                                <div />
+                                <TaskLineBoxStyled image={Task2Image} color="dark" disabled />
+                                <div />
+                                <TaskLineBoxStyled image={Task3Image} color="dark" disabled />
                             </LinesWrapperStyled>
                             <IconButtonStyled sizeRatio={sizeRatio} onClick={() => setIsRules(true)}>
                                 <IconStyled

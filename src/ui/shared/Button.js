@@ -18,7 +18,10 @@ const ButtonStyled = styled.button`
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;
-    cursor: pointer;
+    
+    &:not(:disabled) {
+        cursor: pointer;
+    }
 `;
 
 export const Button = ({ children, ...props }) => {
