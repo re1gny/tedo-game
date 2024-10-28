@@ -5,7 +5,8 @@ import Start2PanelBackImage from '../assets/images/start2/panelBack.png';
 import Level1BackImage from '../assets/images/level1/back.png';
 import Level1IntroBackImage from '../assets/images/level1Intro/back.png';
 import Level1IntroPanelBackImage from '../assets/images/level1Intro/panelBack.png';
-import Level1RulesPanelBackImage from '../assets/images/level1Rules/panelBack.png';
+import Level1RulesPanelBack1Image from '../assets/images/level1Rules/panelBack1.png';
+import Level1RulesPanelBack2Image from '../assets/images/level1Rules/panelBack2.png';
 import Level1RulesPersonImage from '../assets/images/level1Rules/person.svg';
 import Level1RulesTaskImage from '../assets/images/level1Rules/task.svg';
 import Level1RulesLine1Image from '../assets/images/level1Rules/lines/line1.svg';
@@ -171,7 +172,8 @@ export const SCREEN_IMAGES = {
     [SCREEN_NAME.Leve1Intro]: [Level1IntroBackImage, Level1IntroPanelBackImage],
     [SCREEN_NAME.Leve1Rules]: [
         Level1BackImage,
-        Level1RulesPanelBackImage,
+        Level1RulesPanelBack1Image,
+        Level1RulesPanelBack2Image,
         Level1RulesPersonImage,
         Level1RulesTaskImage,
         Level1RulesLine1Image,

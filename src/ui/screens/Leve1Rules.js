@@ -13,7 +13,8 @@ import {Title} from "../shared/Title";
 import {Blackout} from "../shared/Blackout";
 import {LineBox} from "../shared/LineBox";
 import {Image} from "../shared/Image";
-import PanelBackImage from "../../assets/images/level1Rules/panelBack.png";
+import PanelBack1Image from "../../assets/images/level1Rules/panelBack1.png";
+import PanelBack2Image from "../../assets/images/level1Rules/panelBack2.png";
 import BackImage from "../../assets/images/level1/back.png";
 import TaskImage from "../../assets/images/level1Rules/task.svg";
 import PersonImage from "../../assets/images/level1Rules/person.svg";
@@ -32,8 +33,9 @@ const PanelStyled = styled(Panel)`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: ${({background}) => `url(${background})`};
-    background-size: 100% 100%;
+    background-image: url(${PanelBack1Image}), url(${PanelBack2Image});
+    background-size: 100% 100%, 100% ${({sizeRatio}) => scalePx(552, sizeRatio)};
+    background-position: top left, top center;
     background-repeat: no-repeat;
     padding: ${({sizeRatio}) => scalePx(20, sizeRatio)};
 `;
@@ -168,7 +170,7 @@ export function RulesPanel({onStart, ...rest}) {
     }, [rotates]);
 
     return (
-        <PanelStyled sizeRatio={sizeRatio} background={PanelBackImage} {...rest}>
+        <PanelStyled sizeRatio={sizeRatio} {...rest}>
             <TransparentPanelStyled sizeRatio={sizeRatio}>
                 <TransparentPanelTitleStyled sizeRatio={sizeRatio}>
                     Как играть?
