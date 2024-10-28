@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "./static/js/main.72e0788e.js",
+    "main.js": "./static/js/main.68fc4077.js",
     "static/media/back.png": "./static/media/back.9af571e207ed84bb2af6.png",
     "static/media/light.png": "./static/media/light.dac09f4b54eedccacec6.png",
     "static/media/back2.png": "./static/media/back2.2532436f6a3a9aeefb8c.png",
@@ -16,14 +16,6 @@
     "static/media/logo.svg": "./static/media/logo.bc35d9c5032628be88c806f500cead25.svg",
     "static/media/puzzle2.png": "./static/media/puzzle2.9483aa8a8ab92ea29726.png",
     "static/media/puzzle7.png": "./static/media/puzzle7.8f4ac1bdedbd5ff0730b.png",
-    "static/media/puzzlePlace2.svg": "./static/media/puzzlePlace2.351aefa6937b6dd34f9760c74995c2c1.svg",
-    "static/media/puzzlePlace1.svg": "./static/media/puzzlePlace1.07db9d1a912ad489c134c45e03d54f4b.svg",
-    "static/media/puzzlePlace4.svg": "./static/media/puzzlePlace4.fec7d47e57ee44325f95d74e6727666d.svg",
-    "static/media/puzzlePlace5.svg": "./static/media/puzzlePlace5.bad8cd7e2868a5d2c26546aaeafa6d98.svg",
-    "static/media/puzzlePlace7.svg": "./static/media/puzzlePlace7.3eac80f9c9e56746b7fc74bc87beac0c.svg",
-    "static/media/puzzlePlace8.svg": "./static/media/puzzlePlace8.140aeb47310417e482729e440eac62c1.svg",
-    "static/media/puzzlePlace3.svg": "./static/media/puzzlePlace3.522da2cf6e08db1643fb89448bd77e91.svg",
-    "static/media/puzzlePlace6.svg": "./static/media/puzzlePlace6.3148ae9358063bd2b335897e5584ddcc.svg",
     "static/media/person2.svg": "./static/media/person2.17fcb7a498bc15154c41bb17d3630151.svg",
     "static/media/person1.svg": "./static/media/person1.24168f56255ed99ca1ab6e5896445974.svg",
     "static/media/person.svg": "./static/media/person.5963114d5fb1119a5367d4225171b767.svg",
@@ -105,9 +97,9 @@
     "static/media/person1Subline8.svg": "./static/media/person1Subline8.af1b84ff2851489092dd5f7453b19891.svg",
     "static/media/person1Subline9.svg": "./static/media/person1Subline9.af1b84ff2851489092dd5f7453b19891.svg",
     "static/media/subline4.svg": "./static/media/subline4.f7094a75e9bf5ab86a934f2486803db8.svg",
-    "main.72e0788e.js.map": "./static/js/main.72e0788e.js.map"
+    "main.68fc4077.js.map": "./static/js/main.68fc4077.js.map"
   },
   "entrypoints": [
-    "static/js/main.72e0788e.js"
+    "static/js/main.68fc4077.js"
   ]
 }
