@@ -17,8 +17,8 @@ import PanelBackImage from "../../assets/images/level2Rules/panelBack.png";
 import PuzzlesBackImage from "../../assets/images/level2Rules/puzzlesBack.png";
 import Puzzle1Image from "../../assets/images/level2Rules/puzzles/puzzle1.png";
 import Puzzle2Image from "../../assets/images/level2Rules/puzzles/puzzle2.png";
-import PuzzlePlace1Image from "../../assets/images/level2Rules/puzzlePlaces/puzzlePlace1.svg";
-import PuzzlePlace2Image from "../../assets/images/level2Rules/puzzlePlaces/puzzlePlace2.svg";
+import PuzzlePlace1Image from "../../assets/images/level2Rules/puzzlePlaces/puzzlePlace1.png";
+import PuzzlePlace2Image from "../../assets/images/level2Rules/puzzlePlaces/puzzlePlace2.png";
 
 const PanelStyled = styled(Panel)`
     position: relative;

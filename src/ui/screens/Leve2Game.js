@@ -28,14 +28,14 @@ import Puzzle5Image from "../../assets/images/level2Game/puzzles/puzzle5.png";
 import Puzzle6Image from "../../assets/images/level2Game/puzzles/puzzle6.png";
 import Puzzle7Image from "../../assets/images/level2Game/puzzles/puzzle7.png";
 import Puzzle8Image from "../../assets/images/level2Game/puzzles/puzzle8.png";
-import PuzzlePlace1Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace1.svg";
-import PuzzlePlace2Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace2.svg";
-import PuzzlePlace3Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace3.svg";
-import PuzzlePlace4Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace4.svg";
-import PuzzlePlace5Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace5.svg";
-import PuzzlePlace6Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace6.svg";
-import PuzzlePlace7Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace7.svg";
-import PuzzlePlace8Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace8.svg";
+import PuzzlePlace1Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace1.png";
+import PuzzlePlace2Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace2.png";
+import PuzzlePlace3Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace3.png";
+import PuzzlePlace4Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace4.png";
+import PuzzlePlace5Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace5.png";
+import PuzzlePlace6Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace6.png";
+import PuzzlePlace7Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace7.png";
+import PuzzlePlace8Image from "../../assets/images/level2Game/puzzlePlaces/puzzlePlace8.png";
 
 const Wrapper = styled(motion.div)`
     position: relative;

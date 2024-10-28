@@ -22,6 +22,7 @@ const LineBoxStyled = styled.button`
     height: ${({size, sizeRatio}) => scalePx(SIZE_TO_PIXELS[size], sizeRatio)};
     border-radius: ${({sizeRatio}) => scalePx(10, sizeRatio)};
     transform: ${({rotate}) => `rotate(${rotate * 90}deg)`};
+    transform-origin: center;
     overflow: hidden;
     transition: transform 0.2s;
 
