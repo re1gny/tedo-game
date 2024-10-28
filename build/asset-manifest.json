@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "./static/js/main.1ed0378b.js",
+    "main.js": "./static/js/main.72e0788e.js",
     "static/media/back.png": "./static/media/back.9af571e207ed84bb2af6.png",
     "static/media/light.png": "./static/media/light.dac09f4b54eedccacec6.png",
     "static/media/back2.png": "./static/media/back2.2532436f6a3a9aeefb8c.png",
@@ -9,6 +9,7 @@
     "static/media/TTCommonsProDemiBold.ttf": "./static/media/TTCommonsProDemiBold.ff486fb0567ba403a7f7.ttf",
     "static/media/puzzlesBack.png": "./static/media/puzzlesBack.5e190c3856572080dc1f.png",
     "static/media/panelBack.png": "./static/media/panelBack.9558974308b4c1ff26ee.png",
+    "static/media/panelBack1.png": "./static/media/panelBack1.8b2a1e7e1ae40b733a49.png",
     "static/media/puzzleBackVertical.png": "./static/media/puzzleBackVertical.b63deb965bf14bc3d01a.png",
     "static/media/puzzleBackHorizontal.png": "./static/media/puzzleBackHorizontal.fa5b37b81a467a4840d9.png",
     "static/media/modalBack.png": "./static/media/modalBack.5abc6cafa271e9c47185.png",
@@ -104,9 +105,9 @@
     "static/media/person1Subline8.svg": "./static/media/person1Subline8.af1b84ff2851489092dd5f7453b19891.svg",
     "static/media/person1Subline9.svg": "./static/media/person1Subline9.af1b84ff2851489092dd5f7453b19891.svg",
     "static/media/subline4.svg": "./static/media/subline4.f7094a75e9bf5ab86a934f2486803db8.svg",
-    "main.1ed0378b.js.map": "./static/js/main.1ed0378b.js.map"
+    "main.72e0788e.js.map": "./static/js/main.72e0788e.js.map"
   },
   "entrypoints": [
-    "static/js/main.1ed0378b.js"
+    "static/js/main.72e0788e.js"
   ]
 }
