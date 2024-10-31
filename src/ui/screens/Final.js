@@ -1,6 +1,7 @@
 import {useRef, useState} from "react";
 import {motion, AnimatePresence} from "framer-motion";
 import styled from "@emotion/styled";
+import { FTClient } from 'ft-client';
 import {useSizeRatio} from "../../hooks/useSizeRatio";
 import PanelBackImage from "../../assets/images/final/panelBack.png";
 import BackImage from "../../assets/images/final/back.png";
@@ -74,6 +75,8 @@ const CheckIconStyled = styled(motion.svg)`
     height: ${({sizeRatio}) => scalePx(24, sizeRatio)};
 `;
 
+const ftClient = new FTClient('https://games-admin.fut.ru/api/', 'tedo-lighthouse')
+
 export function Final() {
     const sizeRatio = useSizeRatio();
     const [email, setEmail] = useState('');
@@ -130,6 +133,7 @@ export function Final() {
 
         if (email && isAgreed) {
             reachMetrikaGoal("mail");
+            ftClient.createRecord({ email });
             setIsTakingPart(true);
         }
     };
