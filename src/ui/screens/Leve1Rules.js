@@ -13,6 +13,7 @@ import {Title} from "../shared/Title";
 import {Blackout} from "../shared/Blackout";
 import {LineBox} from "../shared/LineBox";
 import {Image} from "../shared/Image";
+import {reachMetrikaGoal} from "../../utils/reachMetrikaGoal";
 import PanelBack1Image from "../../assets/images/level1Rules/panelBack1.png";
 import PanelBack2Image from "../../assets/images/level1Rules/panelBack2.png";
 import BackImage from "../../assets/images/level1/back.png";
@@ -263,6 +264,11 @@ export function Leve1Rules() {
     const sizeRatio = useSizeRatio();
     const {next} = useProgress();
 
+    const handleNext = () => {
+        reachMetrikaGoal("start-1");
+        next();
+    };
+
     return (
         <Wrapper
             sizeRatio={sizeRatio}
@@ -275,7 +281,7 @@ export function Leve1Rules() {
                 <Tag>этап 1</Tag>
                 <Tag>профессионал</Tag>
             </TagsStyled>
-            <RulesPanelStyled sizeRatio={sizeRatio} onStart={next} />
+            <RulesPanelStyled sizeRatio={sizeRatio} onStart={handleNext} />
         </Wrapper>
     )
 }

@@ -9,6 +9,7 @@ import {Text} from "../shared/Text";
 import {Button} from "../shared/Button";
 import {Panel} from "../shared/Panel";
 import {TransparentPanel} from "../shared/TransparentPanel";
+import {reachMetrikaGoal} from "../../utils/reachMetrikaGoal";
 
 const Wrapper = styled(motion.div)`
     display: flex;
@@ -53,6 +54,11 @@ export function Leve1Final() {
     const sizeRatio = useSizeRatio();
     const {next} = useProgress();
 
+    const handleNext = () => {
+        reachMetrikaGoal("finish-1");
+        next();
+    };
+
     return (
         <Wrapper
             sizeRatio={sizeRatio}
@@ -73,7 +79,7 @@ export function Leve1Final() {
                     <Text bold inline>Помни — профессионализм</Text> приходит с опытом. В ТеДо ты сможешь пройти профессиональное обучение, поработать на значимых для экономики страны проектах в разных индустриях и многому научиться у клиентов и старших коллег.
                 </PanelTextStyled>
             </PanelStyled>
-            <ButtonStyled sizeRatio={sizeRatio} onClick={next}>
+            <ButtonStyled sizeRatio={sizeRatio} onClick={handleNext}>
                 далее
             </ButtonStyled>
         </Wrapper>

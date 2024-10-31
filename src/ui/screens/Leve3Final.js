@@ -9,6 +9,7 @@ import {Text} from "../shared/Text";
 import {Button} from "../shared/Button";
 import {Panel} from "../shared/Panel";
 import {TransparentPanel} from "../shared/TransparentPanel";
+import {reachMetrikaGoal} from "../../utils/reachMetrikaGoal";
 
 const Wrapper = styled(motion.div)`
     display: flex;
@@ -57,6 +58,11 @@ export function Leve3Final() {
     const sizeRatio = useSizeRatio();
     const {next} = useProgress();
 
+    const handleNext = () => {
+        reachMetrikaGoal("finish-3");
+        next();
+    };
+
     return (
         <Wrapper
             sizeRatio={sizeRatio}
@@ -80,7 +86,7 @@ export function Leve3Final() {
                     <Text bold inline>В ТеДо есть инструменты, которые поддерживают тебя в этом типе развития.</Text> Реализуй себя в роли спикера, тренера или амбассадора. Вступай в клубы по интересам или организуй свой. Проходи тренинги, читай книги в онлайн-библиотеке и пробуй много всего другого.
                 </PanelTextStyled>
             </PanelStyled>
-            <ButtonStyled sizeRatio={sizeRatio} onClick={next}>
+            <ButtonStyled sizeRatio={sizeRatio} onClick={handleNext}>
                 готово
             </ButtonStyled>
         </Wrapper>

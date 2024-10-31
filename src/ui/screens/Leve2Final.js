@@ -9,6 +9,7 @@ import {Text} from "../shared/Text";
 import {Button} from "../shared/Button";
 import {Panel} from "../shared/Panel";
 import {TransparentPanel} from "../shared/TransparentPanel";
+import {reachMetrikaGoal} from "../../utils/reachMetrikaGoal";
 
 const Wrapper = styled(motion.div)`
     display: flex;
@@ -53,6 +54,11 @@ export function Leve2Final() {
     const sizeRatio = useSizeRatio();
     const {next} = useProgress();
 
+    const handleNext = () => {
+        reachMetrikaGoal("finish-2");
+        next();
+    };
+
     return (
         <Wrapper
             sizeRatio={sizeRatio}
@@ -70,10 +76,10 @@ export function Leve2Final() {
                     </TransparentPanelTextStyled>
                 </TransparentPanelStyled>
                 <PanelTextStyled sizeRatio={sizeRatio}>
-                    Лидерство начинается со знания себя и управления собой — своими эмоциональным и физическим состоянием, компетенциями и решениями. Когда ты умеешь управлять собой, ты можешь вести за собой команду.
+                    <Text bold inline>Лидерство</Text> начинается со знания себя и управления собой — своими эмоциональным и физическим состоянием, компетенциями и решениями. Когда ты умеешь управлять собой, ты можешь вести за собой команду.
                 </PanelTextStyled>
             </PanelStyled>
-            <ButtonStyled sizeRatio={sizeRatio} onClick={next}>
+            <ButtonStyled sizeRatio={sizeRatio} onClick={handleNext}>
                 далее
             </ButtonStyled>
         </Wrapper>

@@ -9,6 +9,7 @@ import {Text} from "../shared/Text";
 import {Button} from "../shared/Button";
 import {Panel} from "../shared/Panel";
 import {Tag} from "../shared/Tag";
+import {reachMetrikaGoal} from "../../utils/reachMetrikaGoal";
 
 const Wrapper = styled(motion.div)`
     display: flex;
@@ -51,6 +52,11 @@ export function Leve3Intro() {
     const sizeRatio = useSizeRatio();
     const {next} = useProgress();
 
+    const handleNext = () => {
+        reachMetrikaGoal("play-3");
+        next();
+    };
+
     return (
         <Wrapper
             sizeRatio={sizeRatio}
@@ -67,13 +73,13 @@ export function Leve3Intro() {
                     Ты на вершине маяка!
                 </PanelTextStyled>
                 <PanelTextStyled sizeRatio={sizeRatio}>
-                    Последнее задание — <Text bold inline>зажечь лампу</Text>. Но инструкции как это сделать, нет — нужно <Text bold inline>найти решение самостоятельно</Text>.
+                    Последнее задание — <Text bold inline>зажечь лампу</Text>. Но инструкции, как это сделать, нет — нужно <Text bold inline>найти решение самостоятельно</Text>.
                 </PanelTextStyled>
                 <PanelTextStyled sizeRatio={sizeRatio}>
                     В личностном развитии тоже ведь нет чётких инструкций, верно? Каждый сам определяет свой собственный путь.
                 </PanelTextStyled>
             </PanelStyled>
-            <ButtonStyled sizeRatio={sizeRatio} onClick={next}>
+            <ButtonStyled sizeRatio={sizeRatio} onClick={handleNext}>
                 играть
             </ButtonStyled>
         </Wrapper>

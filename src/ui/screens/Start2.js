@@ -8,6 +8,7 @@ import {scalePx} from "../../utils/scalePx";
 import {Text} from "../shared/Text";
 import {Button} from "../shared/Button";
 import {Panel} from "../shared/Panel";
+import {reachMetrikaGoal} from "../../utils/reachMetrikaGoal";
 
 const Wrapper = styled(motion.div)`
     display: flex;
@@ -43,6 +44,11 @@ export function Start2() {
     const sizeRatio = useSizeRatio();
     const {next} = useProgress();
 
+    const handleNext = () => {
+        reachMetrikaGoal("study");
+        next();
+    };
+
     return (
         <Wrapper
             sizeRatio={sizeRatio}
@@ -59,7 +65,7 @@ export function Start2() {
                     На каждом из них мы спрятали одну из составляющих успешной карьеры, которая помогает быстро развиваться в ТеДо.
                 </PanelTextStyled>
             </PanelStyled>
-            <ButtonStyled sizeRatio={sizeRatio} onClick={next}>
+            <ButtonStyled sizeRatio={sizeRatio} onClick={handleNext}>
                 Начать
             </ButtonStyled>
         </Wrapper>

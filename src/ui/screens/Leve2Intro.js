@@ -9,6 +9,7 @@ import {Text} from "../shared/Text";
 import {Button} from "../shared/Button";
 import {Panel} from "../shared/Panel";
 import {Tag} from "../shared/Tag";
+import {reachMetrikaGoal} from "../../utils/reachMetrikaGoal";
 
 const Wrapper = styled(motion.div)`
     display: flex;
@@ -51,6 +52,11 @@ export function Leve2Intro() {
     const sizeRatio = useSizeRatio();
     const {next} = useProgress();
 
+    const handleNext = () => {
+        reachMetrikaGoal("play-2");
+        next();
+    };
+
     return (
         <Wrapper
             sizeRatio={sizeRatio}
@@ -70,7 +76,7 @@ export function Leve2Intro() {
                     Перед тобой длинная лестница. Чтобы её пройти, нужно проявить себя как лидер — продвигаться постепенно, но уверенно.
                 </PanelTextStyled>
             </PanelStyled>
-            <ButtonStyled sizeRatio={sizeRatio} onClick={next}>
+            <ButtonStyled sizeRatio={sizeRatio} onClick={handleNext}>
                 играть
             </ButtonStyled>
         </Wrapper>

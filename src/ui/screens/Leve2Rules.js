@@ -12,6 +12,7 @@ import {TransparentPanel} from "../shared/TransparentPanel";
 import {Title} from "../shared/Title";
 import {Blackout} from "../shared/Blackout";
 import {PuzzleBox} from "../shared/PuzzleBox";
+import {reachMetrikaGoal} from "../../utils/reachMetrikaGoal";
 import BackImage from "../../assets/images/level2/back.png";
 import PanelBackImage from "../../assets/images/level2Rules/panelBack.png";
 import PuzzlesBackImage from "../../assets/images/level2Rules/puzzlesBack.png";
@@ -272,6 +273,11 @@ export function Leve2Rules() {
     const sizeRatio = useSizeRatio();
     const {next} = useProgress();
 
+    const handleNext = () => {
+        reachMetrikaGoal("start-2");
+        next();
+    };
+
     return (
         <Wrapper
             sizeRatio={sizeRatio}
@@ -284,7 +290,7 @@ export function Leve2Rules() {
                 <Tag>этап 2</Tag>
                 <Tag>лидер</Tag>
             </TagsStyled>
-            <RulesPanelStyled sizeRatio={sizeRatio} onStart={next} />
+            <RulesPanelStyled sizeRatio={sizeRatio} onStart={handleNext} />
         </Wrapper>
     )
 }

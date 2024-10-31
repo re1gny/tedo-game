@@ -11,6 +11,7 @@ import {scalePx} from "../../utils/scalePx";
 import {Text} from "../shared/Text";
 import {Button} from "../shared/Button";
 import {Panel} from "../shared/Panel";
+import {reachMetrikaGoal} from "../../utils/reachMetrikaGoal";
 
 const Wrapper = styled(motion.div)`
     display: flex;
@@ -71,6 +72,11 @@ export function Start1() {
     const sizeRatio = useSizeRatio();
     const {next} = useProgress();
 
+    const handleNext = () => {
+        reachMetrikaGoal("game");
+        next();
+    };
+
     return (
         <Wrapper
             sizeRatio={sizeRatio}
@@ -101,7 +107,7 @@ export function Start1() {
                     </Text> Отправляйся на важную миссию — пройди все уровни и доберись до лампы наверху. Зажечь её могут только профессионалы нового поколения. Пройди 3 этапа и стань таким профессионалом. А ещё выиграй приз!
                 </Text>
             </PanelStyled>
-            <ButtonStyled sizeRatio={sizeRatio} onClick={next}>
+            <ButtonStyled sizeRatio={sizeRatio} onClick={handleNext}>
                 стать хранителем
             </ButtonStyled>
         </Wrapper>

@@ -11,6 +11,7 @@ import {Panel} from "../shared/Panel";
 import {TransparentPanel} from "../shared/TransparentPanel";
 import {Input} from "../shared/Input";
 import {Checkbox} from "../shared/Checkbox";
+import {reachMetrikaGoal} from "../../utils/reachMetrikaGoal";
 
 const Wrapper = styled(motion.div)`
     display: flex;
@@ -57,6 +58,11 @@ const CheckboxStyled = styled(Checkbox)`
     margin-top: ${({sizeRatio}) => scalePx(13, sizeRatio)};
 `;
 
+const LinkStyled = styled.a`
+    color: inherit;
+    text-decoration: underline;
+`;
+
 const ButtonStyled = styled(Button)`
     margin-top: ${({sizeRatio}) => scalePx(15, sizeRatio)};
 `;
@@ -79,6 +85,7 @@ export function Final() {
     const isEmailErrorTimerRef = useRef(null)
 
     const handleGo = () => {
+        reachMetrikaGoal("web");
         window.open('https://t.me/tedo_career', '_blank');
     };
 
@@ -122,6 +129,7 @@ export function Final() {
         }
 
         if (email && isAgreed) {
+            reachMetrikaGoal("mail");
             setIsTakingPart(true);
         }
     };
@@ -155,7 +163,7 @@ export function Final() {
                         sizeRatio={sizeRatio}
                         value={isAgreed}
                         error={isAgreedError}
-                        label={<>Я согласен(а) на обработку персональных данных и получение информационных сообщений, а также с правилами проведения акции.</>}
+                        label={<>Я согласен(а) на <LinkStyled href="https://doc.fut.ru/personal_data_policy.pdf" target="_blank">обработку персональных данных</LinkStyled> и получение информационных сообщений, а также с <LinkStyled href="https://tedo-lighthouse.fut.ru/agreement.pdf" target="_blank">правилами проведения акции</LinkStyled>.</>}
                         readOnly={isTakingPart}
                         onChange={handleIsAgreedChange}
                     />

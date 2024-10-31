@@ -14,6 +14,7 @@ import {TransparentPanel} from "../shared/TransparentPanel";
 import {Title} from "../shared/Title";
 import {LightBox} from "../shared/LightBox";
 import {Blackout} from "../shared/Blackout";
+import {reachMetrikaGoal} from "../../utils/reachMetrikaGoal";
 
 const PanelStyled = styled(Panel)`
     position: relative;
@@ -138,6 +139,11 @@ export function Leve3Rules() {
     const sizeRatio = useSizeRatio();
     const {next} = useProgress();
 
+    const handleNext = () => {
+        reachMetrikaGoal("start-3");
+        next();
+    };
+
     return (
         <Wrapper
             sizeRatio={sizeRatio}
@@ -150,7 +156,7 @@ export function Leve3Rules() {
                 <Tag>этап 3</Tag>
                 <Tag>личность</Tag>
             </TagsStyled>
-            <RulesPanelStyled sizeRatio={sizeRatio} onStart={next} />
+            <RulesPanelStyled sizeRatio={sizeRatio} onStart={handleNext} />
         </Wrapper>
     )
 }
