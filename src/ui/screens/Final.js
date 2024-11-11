@@ -167,7 +167,7 @@ export function Final() {
                         sizeRatio={sizeRatio}
                         value={isAgreed}
                         error={isAgreedError}
-                        label={<>Я согласен(а) на <LinkStyled href="https://doc.fut.ru/personal_data_policy.pdf" target="_blank">обработку персональных данных</LinkStyled> и получение информационных сообщений, а также с <LinkStyled href="https://tedo-lighthouse.fut.ru/agreement.pdf" target="_blank">правилами проведения акции</LinkStyled>.</>}
+                        label={<>Я согласен(а) на <LinkStyled href="https://doc.fut.ru/personal_data_policy.pdf" target="_blank">обработку персональных данных</LinkStyled> и получение информационных сообщений, а также с <LinkStyled href="https://disk.yandex.com/i/yK3qJgig9hQH0g" target="_blank">правилами проведения акции</LinkStyled>.</>}
                         readOnly={isTakingPart}
                         onChange={handleIsAgreedChange}
                     />
